@@ -25,7 +25,7 @@ local config_dir = gears.filesystem.get_configuration_dir()
 local blurred = false;
 
 local wallpaper = config_dir .. "/wallpaper.jpg"
-local blurredWallpaper = config_dir .. "/blurredWallpaper.jpg"
+local blurredWallpaper = config_dir .. "/blurredWallpaper.png"
 
 awful.spawn.with_shell("feh --bg-fill " .. wallpaper)
 
