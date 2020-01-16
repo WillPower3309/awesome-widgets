@@ -27,8 +27,7 @@ local blurred = false;
 local wallpaper = config_dir .. "/wallpaper.jpg"
 local blurredWallpaper = config_dir .. "/blurredWallpaper.jpg"
 
--- Set Wallpaper
-gears.wallpaper.maximized(wallpaper)
+awful.spawn.with_shell("feh --bg-fill " .. wallpaper)
 
 --- Check if a file or directory exists in this path
 local function exists(file)
@@ -62,7 +61,7 @@ end
 -- changes to blurred wallpaper
 local function blur()
    if not blurred then
-      gears.wallpaper.maximized(blurredWallpaper)
+      awful.spawn.with_shell("feh --bg-fill " .. blurredWallpaper)
       blurred = true
    end
 end
@@ -70,7 +69,7 @@ end
 -- changes to normal wallpaper
 local function unblur()
    if blurred then
-      gears.wallpaper.maximized(wallpaper)
+      awful.spawn.with_shell("feh --bg-fill " .. wallpaper)
       blurred = false
    end
 end
