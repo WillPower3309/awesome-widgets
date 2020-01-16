@@ -6,4 +6,4 @@ A collection of various widgets I've developed for awesomewm
 ## Widgets in this repo
 |Widget|Description|Dependencies|Notes|
 |:-:|:-:|:-:|:-:|
-|`wallpaper.lua`|Blurs wallpaper when windows are open|`imagemagick`|Change the `wallpaper` variable to match the name of your wallpaper|
+|`wallpaper.lua`|Blurs wallpaper when windows are open|`feh`, `imagemagick`|Change the `wallpaper` variable to match the name of your wallpaper|
