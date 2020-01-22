@@ -38,6 +38,7 @@ local blurred = false;
 local wallpaper = config_dir .. "/wallpaper.jpg"
 local blurredWallpaper = config_dir .. "/blurredWallpaper.png"
 
+-- Set initial wallpaper
 awful.spawn.with_shell("feh --bg-fill " .. wallpaper)
 
 --- Check if a file or directory exists in this path
