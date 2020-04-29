@@ -9,4 +9,4 @@ A collection of various widgets I've developed for awesomewm
 |Widget|Description|Dependencies|Notes|
 |:-:|:-:|:-:|:-:|
 |`wallpaper-blur.lua`|Blurs wallpaper when windows are open|`feh`, `imagemagick`|Change `wallpaper` variable to match name of your wallpaper|
-|`tag-switcher.lua`|Beautiful widget that shows tag thumbnails when switching tags|`scrot`|None|
+|`tag-switcher.lua`|Beautiful widget that shows tag thumbnails when switching tags|`scrot`|**WORK IN PROGRESS**|
