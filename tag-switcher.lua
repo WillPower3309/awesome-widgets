@@ -56,7 +56,7 @@ client.connect_signal("manage", function(c)
 end)
 
 
--- check if thumbnail should be deleted on client open
+-- check if thumbnail should be deleted on client close
 client.connect_signal("unmanage", function(c)
     local t = awful.screen.focused().selected_tag
     -- update if any open clients
