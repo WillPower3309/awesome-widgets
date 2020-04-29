@@ -38,9 +38,8 @@ local thumbnail_dir = "/tmp/tag-thumbnails/"
 awful.spawn.with_shell("mkdir " .. thumbnail_dir)
 
 
--- Capture a thumbnail
+-- Capture a thumbnail image
 local function capture_thumbnail(tag)
-    -- capture thumbnail
     awful.spawn.with_shell("sleep 0.3; scrot -e 'mv $f " .. thumbnail_dir .. tag.name .. ".jpg 2>/dev/null'", false)
 end
 
@@ -56,7 +55,7 @@ client.connect_signal("manage", function(c)
 end)
 
 
--- check if thumbnail should be deleted on client close
+-- check if thumbnail should be deleted or updated on client close
 client.connect_signal("unmanage", function(c)
     local t = awful.screen.focused().selected_tag
     -- update if any open clients
@@ -69,16 +68,6 @@ client.connect_signal("unmanage", function(c)
 end)
 
 
--- check if thumbnail should be captured on client close
-client.connect_signal("unmanage", function(c)
-    local t = awful.screen.focused().selected_tag
-    -- check if any open clients
-    for _ in pairs(t:clients()) do
-        return
-    end
-end)
-
-
 -- ===================================================================
 -- Thumbnail Widget Creation
 -- ===================================================================
@@ -87,6 +76,7 @@ end)
 local overlayHeight = dpi(200)
 local thumbnailMargin = dpi(50)
 
+-- Convert an image location into an imagebox widget
 local function makeThumbnail(image)
     imagebox = wibox.widget {
         image = thumbnail_dir .. "/" .. image .. ".jpg",
