@@ -162,4 +162,4 @@ screen.connect_signal("request::desktop_decoration", function(s)
             end
         }
     end)
-end)N
+end)
